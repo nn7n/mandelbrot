@@ -56,7 +56,7 @@ func colorize(i int) color.Color {
 
 	hue := 6 * float64(i%0xff) / float64(iterations%0xff)
 	off := uint8(0xff * math.Remainder(hue, 1))
-	switch int(math.Remainder(math.Floor(hue), 6)) {
+	switch int(math.Remainder(hue, 6)) {
 	case 0:
 		c.R, c.G = 0xff, off
 	case 1:
